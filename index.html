@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese Language Practice MCQs</title>
+    <meta name="description" content="Practice your Mandarin Chinese with 200 interactive multiple choice questions covering tones, pronouns, numbers, days, months, directions and more.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>中</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-decoration">
+        <div class="bg-blob blob-1"></div>
+        <div class="bg-blob blob-2"></div>
+        <div class="bg-blob blob-3"></div>
+    </div>
+
+    <header id="main-header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">中</span>
+                <div>
+                    <h1>Chinese Language Practice</h1>
+                    <p class="subtitle">198 Interactive MCQs</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <div class="score-panel" id="scorePanel">
+                    <div class="score-item correct-score">
+                        <span class="score-label">Correct</span>
+                        <span class="score-value" id="correctCount">0</span>
+                    </div>
+                    <div class="score-item wrong-score">
+                        <span class="score-label">Wrong</span>
+                        <span class="score-value" id="wrongCount">0</span>
+                    </div>
+                    <div class="score-item total-score">
+                        <span class="score-label">Progress</span>
+                        <span class="score-value" id="progressCount">0/198</span>
+                    </div>
+                </div>
+                <button class="reset-btn" id="resetBtn" title="Reset Quiz">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="23 4 23 10 17 10"></polyline>
+                        <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                    </svg>
+                    Reset
+                </button>
+            </div>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </header>
+
+    <main>
+        <div class="category-nav" id="categoryNav">
+            <button class="cat-btn active" data-category="all">All (198)</button>
+            <button class="cat-btn" data-category="tones">Tones (10)</button>
+            <button class="cat-btn" data-category="pronouns">Pronouns (40)</button>
+            <button class="cat-btn" data-category="sentences">Sentences (48)</button>
+            <button class="cat-btn" data-category="vocabulary">Vocabulary (20)</button>
+            <button class="cat-btn" data-category="days">Days (20)</button>
+            <button class="cat-btn" data-category="months">Months (20)</button>
+            <button class="cat-btn" data-category="numbers">Numbers (20)</button>
+            <button class="cat-btn" data-category="greetings">Greetings (20)</button>
+        </div>
+        <div class="quiz-container" id="quizContainer"></div>
+    </main>
+
+    <!-- Completion Modal -->
+    <div class="modal-overlay" id="completionModal">
+        <div class="modal">
+            <div class="modal-glow"></div>
+            <div class="modal-icon">🎉</div>
+            <h2 class="modal-title">Quiz Complete!</h2>
+            <p class="modal-subtitle">You've answered all the questions</p>
+            <div class="modal-stats">
+                <div class="modal-stat">
+                    <span class="modal-stat-value correct-text" id="modalCorrect">0</span>
+                    <span class="modal-stat-label">Correct</span>
+                </div>
+                <div class="modal-stat-divider"></div>
+                <div class="modal-stat">
+                    <span class="modal-stat-value wrong-text" id="modalWrong">0</span>
+                    <span class="modal-stat-label">Wrong</span>
+                </div>
+                <div class="modal-stat-divider"></div>
+                <div class="modal-stat">
+                    <span class="modal-stat-value gold-text" id="modalPercent">0%</span>
+                    <span class="modal-stat-label">Accuracy</span>
+                </div>
+            </div>
+            <div class="modal-grade" id="modalGrade"></div>
+            <div class="modal-actions">
+                <button class="modal-btn modal-btn-secondary" id="modalClose">Review Answers</button>
+                <button class="modal-btn modal-btn-primary" id="modalRestart">Try Again</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reset Confirmation Modal -->
+    <div class="modal-overlay" id="resetModal">
+        <div class="modal modal-sm">
+            <div class="modal-icon">🔄</div>
+            <h2 class="modal-title">Reset Quiz?</h2>
+            <p class="modal-subtitle">This will clear all your progress and answers. This action cannot be undone.</p>
+            <div class="modal-actions">
+                <button class="modal-btn modal-btn-secondary" id="resetCancel">Cancel</button>
+                <button class="modal-btn modal-btn-danger" id="resetConfirm">Reset Everything</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">中</span>
+                <span>Chinese Language Practice</span>
+            </div>
+            <p class="footer-text">198 interactive MCQs covering tones, pronouns, sentences, vocabulary, days, months, numbers & greetings.</p>
+            <p class="footer-copy">© 2026 Chinese Language Practice. Built for learners everywhere.</p>
+        </div>
+    </footer>
+
+    <button class="scroll-top-btn" id="scrollTopBtn" title="Back to top">↑</button>
+
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
